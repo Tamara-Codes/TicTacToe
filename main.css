@@ -45,3 +45,35 @@ h1{
   align-items: center;
   gap: 2rem;
 }
+
+.turn{
+  font-size: 1.5rem;
+}
+
+
+dialog{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }}
+
+
+.player-one,
+.player-two,
+.token{
+  display:flex;
+  gap: 2rem;
+  font-size: 1.25rem;
+  padding: 5px;
+  justify-content: center;
+}
+
+

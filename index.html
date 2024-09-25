@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="main.css">
-  <script src="script.js"></script> 
+  <script src="script.js" defer></script> 
 </head>
 <body>
 
   <h1>TIC TAC TOE</h1>
   
-  <button class="btn new-game">NEW GAME</button>
+  <button class="btn" id="new-game">NEW GAME</button>
 
   <div class="container">
     <div class="gameboard">
@@ -28,14 +28,35 @@
   
     <div class="display">
       <section class="players">
-        <h2>Player 1: Tamara</h2>
+        <h2 id="player1name">Player 1</h2>
         <h2>VS</h2>
-        <h2>Player 2: Luka<h2>
+        <h2 id="player2name">Player 2<h2>
       </section>
-      <div class="turn">Tamara's turn!</div>
-      <button class="btn rematch">REMATCH</button>  
     </div>
 </div>
+
+
+<dialog id="pop-up">
+  <div class="form">
+    <fieldset>
+      <div class="player-one">
+        <label for="player-one">X</label>
+        <input type="text" id="player-one" name="player-one">
+      </div>
+
+      <div class="player-two">
+        <label for="player-two">O</label>
+        <input type="text" id="player-two" name="player-two">
+      </div>
+      
+      <div class="buttons">
+        <button id="cancelBtn" value="cancel">Cancel</button>
+        <button id="confirmBtn" value="confirm">Confirm</button>
+      </div>
+    </fieldset>
+  </div>
+</dialog>
+
 
 </body>
 </html>

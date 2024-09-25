@@ -1,58 +1,114 @@
-
+/* 
 (function Gameboard(){
 
    gameboard = [];
    return gameboard;
 
 })()
+*/
+/* 
+function playMove(){
 
-
-
-function Player(playerOne, tokenOne, playerTwo, tokenTwo){
-
-
-  return PLayer Object {player, token}
-
-  display();
 }
+
+playerOne.playMove(eventListener)
+ */
+
+
+
+
+/* 
+function Game(){
+  
+} */
+
+
+
+function createPlayer(player,token){
+  return {
+    player,
+    token,
+  }
+}
+
 
 function storeInput(){
-  const input1 = document.getElementById("player-one");
-  const token1 = document.querySelector('input[name="read"]:checked').value;
+  const inputPlayerOne = document.querySelector("#player-one");
+  const inputPlayerTwo = document.querySelector("#player-two");
 
-  const input2 = document.getElementById("player-two");
-  const token2 = document.querySelector('input[name="read"]:checked').value;
+  const player1 = inputPlayerOne.value;
+  const player2 = inputPlayerTwo.value;
 
-  const playerOne = input1.value;
-  const playerTwo = input2.value;
-  const tokenOne = token1 === "Token" ? "X" : "O";
-  const tokenTwo = token2 === "Token" ? "X" : "O";
+  playerInfo.close();
 
-  //dialog.close();
+  const playerOne = createPlayer(player1, 'X');
+  const playerTwo = createPlayer(player2, 'O');
 
-  player(playerOne, tokenOne, playerTwo, tokenTwo);
+  Display(player1, player2);
 
+  return playerOne, playerTwo;
 }
 
 
 
-function Game(){
+function Display(player1, player2){
 
+  const playerOne = document.querySelector("#player1name");
+  playerOne.innerHTML = player1;
+
+
+  const playerTwo = document.querySelector("#player2name");
+  playerTwo.innerHTML = player2;
+
+  
+  const display = document.querySelector(".display");
+  const turn = document.createElement("div");
+  turn.innerHTML = "Tamara's turn!";
+  display.appendChild(turn);
+ 
+  /* 
+  const display = document.querySelector(".display");
+  const winner = display.createElement('div');
+  if (winner === playerOne){
+  winner.innerHTML = `${playerOne} wins!`
+  } else if (winner === playerTwo) {
+  winner.innerHTML = `${playerTwo} wins!`
+  } else { winner.innerHTML = "It's a tie!";
+    } */
+/* 
+  const display = document.querySelector(".display");
+  const rematchBtn = display.createElement("button");
+  rematchBtn.addEventListener("click", Game) */
+ }
+
+
+ 
+const newGameBtn = document.querySelector("#new-game");
+const playerInfo = document.querySelector("#pop-up");
+
+newGameBtn.addEventListener("click", () => {
+  playerInfo.showModal();
+});
+
+const cancelBtn = playerInfo.querySelector('#cancelBtn')
+cancelBtn.addEventListener('click', Close);
+
+function Close(){
+  playerInfo.close();
 }
 
 
 
-(function Display(){
+const confirmBtn = playerInfo.querySelector('#confirmBtn')
 
-  div for player1 name
+confirmBtn.addEventListener('click', () => {
+  storeInput();
 
-  div for player2 name
+  const inputPlayerOne = document.getElementById('player-one');
+  const inputPlayerTwo = document.getElementById('player-two');
 
-  div for    ´${player} wins!´    OR   "It's a tie!"
+  inputPlayerOne.value = '';
+  inputPlayerTwo.value = '';
 
-  button for REMATCH that calls Game()
-
-  return {};
- })();
-
+});
 
