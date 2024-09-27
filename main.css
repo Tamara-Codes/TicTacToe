@@ -1,32 +1,67 @@
 
+html{
+  background-image: url("image.jpg"); 
+  background-size: cover;
+  font-family: "Roboto";
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('Roboto-Bold.ttf') format('truetype');
+}
+
+
 .gameboard{
-  resize: both;
+  resize: both; 
   display: grid;
   grid-template-rows: repeat(3, 8em);
   grid-template-columns: repeat(3, 8em);
   gap: 0px;
 }
 
-.field{
-  border: 0.1rem solid black;;
+.gameboard > div{
+  border: 0.1rem solid black;
+  display: flex;              
+  justify-content: center;     
+  align-items: center;   
+  font-size: 3rem;
+  color: #d5145e;
 }
 
 h1{
   text-align: center;
   margin-top: 2rem;
-  font-size: 3rem;
+  font-size: 4rem;
+  color: #c8e2e8;
+  font-weight: 800;
+  font-family: "Roboto Bold";
 }
 
-.btn{
+.btn,
+#rematchBtn{
   display: block;
   text-align: center;
   font-size: 1rem;
   padding: 0.75rem;
   margin: auto;
+  cursor: pointer;
+  background-color:#d5145e;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
 }
 
-.rematch{
-  margin-top: 1rem;
+.btn:hover,
+.btn:focus,
+#rematchBtn:hover,
+#rematchBtn:focus {
+  background-color: #F082AC;
 }
 
 
@@ -45,6 +80,19 @@ h1{
   align-items: center;
   gap: 2rem;
 }
+
+.players > h2 {
+  font-size: 2rem;
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #dc467f;
+}
+
+h3{
+  font-size: 1rem;
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #dc467f;
+}
+
 
 .turn{
   font-size: 1.5rem;
@@ -76,4 +124,6 @@ dialog{
   justify-content: center;
 }
 
-
+h2.versus{
+  font-size: 1.5rem;
+}
